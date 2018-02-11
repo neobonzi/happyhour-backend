@@ -1,21 +1,26 @@
-postgres:
-    build: ./postgres
-    ports:
-        - "5432:5432"
+version: '3.0'
 
-djangoapp:
-    build: ./django-app
-    command: "python /opt/django-app/manage.py runserver 0.0.0.0:80"
-    links:
-        - postgres
-    volumes:
-        - /vagrant/django-app/src:/opt/django-app
+services:
+    postgres:
+        build: ./postgres
+        ports:
+            - "5432:5432"
 
-proxy:
-    build: ./proxy
-    ports: 
-        - "80:80"
-    volumes: 
-        - /vagrant/proxy/sites-enabled:/etc/nginx/sites-enabled
-    links:
-        - djangoapp
+    djangoapp:
+        build: ./django-app
+        command: "python /opt/django-app/manage.py runserver 0.0.0.0:80"
+        links:
+            - postgres
+        depends_on:
+            - postgres
+        volumes:
+            - /vagrant/django-app/src:/opt/django-app
+
+    proxy:
+        build: ./proxy
+        ports: 
+            - "80:80"
+        volumes: 
+            - /vagrant/proxy/sites-enabled:/etc/nginx/sites-enabled
+        links:
+            - djangoapp
