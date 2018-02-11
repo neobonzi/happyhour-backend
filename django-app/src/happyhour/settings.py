@@ -78,14 +78,12 @@ WSGI_APPLICATION = 'happyhour.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase'
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'happyhour',
-#        'USER': 'root',
-#        'PASSWORD': 'password',
-#        'HOST': 'postgres',
-#        'PORT': 5432,
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'happyhour',
+        'USER': 'root',
+        'PASSWORD': 'password',
+        'HOST': 'postgres',
+        'PORT': 5432,
     }
 }
 
