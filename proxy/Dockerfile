@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTANER James Bilous
+MAINTAINER James Bilous
 
 run apt-get update
 run apt-get install -y nginx vim inotify-tools

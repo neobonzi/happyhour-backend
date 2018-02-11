@@ -4,8 +4,8 @@ postgres:
         - "5432:5432"
 
 djangoapp:
-    build: ./djang-app
-    command: "python manage.py runserver 0.0.0.0:80"
+    build: ./django-app
+    command: "python /opt/django-app/manage.py runserver 0.0.0.0:80"
     links:
         - postgres
     volumes:
