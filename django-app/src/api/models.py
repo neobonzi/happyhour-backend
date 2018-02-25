@@ -6,4 +6,4 @@ class Business(models.Model):
     address = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
-        return self.question
+        return self.business

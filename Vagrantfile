@@ -5,5 +5,5 @@ Vagrant.configure(2) do |config|
     config.vm.network "forwarded_port", guest:80, host:42069
     config.vm.hostname = "hh-backend-dev"
     config.vm.provision :docker
-    config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: true, run: "always"
+    config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml"
 end
