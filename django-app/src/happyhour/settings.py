@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'happyhour.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
         'NAME': 'happyhour',
         'USER': 'postgres',
         'PASSWORD': '',
