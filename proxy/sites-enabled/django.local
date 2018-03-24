@@ -3,7 +3,7 @@ server {
     server_name django.local;
     location / {
         proxy_pass http://djangoapp:80;
-        proxy_set_header Host $host;
+        proxy_set_header Host $host:42069;
         proxy_set_header X-Forward-For $proxy_add_x_forwarded_for;
     }
 }
